@@ -27,6 +27,7 @@ import (
 	"bytes"
 	"strings"
 	"strconv"
+	"github.com/wanglei-ok/logfile"
 )
 
 
@@ -294,6 +295,10 @@ func retrieve(addr string, startBlock int) {
 	}
 
 	trans.Commit()
+}
+
+func init(){
+	logfile.Setup()
 }
 
 //每十分钟运行一次
